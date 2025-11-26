@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="../accents/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Регистрация</h2>
+        <form id="registerForm" action="../include/register.php" method="post">
+             <div class="form-group">
+                <label for="nickname">Nickname</label>
+                <input type="nicname" id="nickname" name="nickname" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Подтвердите пароль:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            <button type="submit" class="button">Зарегистрироваться</button>
+             <div id="error-message" class="error-message"></div>
+        </form>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

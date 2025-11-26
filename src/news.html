@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новостная Лента</title>
+    <link rel="stylesheet" href="../accents/css/news.css">
+</head>
+<body>
+    <?php include '../src/header-news.php'; ?>
+
+    <main>
+        <div class="container">
+            <div class="wall">
+                <h2>Новости</h2>
+                <?php include '../include/news-db.php'; ?>
+              <?php foreach ($news as $post): ?>
+                 <div class="post">
+                   <div class="post-header">
+                     <img src="<?php echo $post['avatar']; ?>" alt="Аватар автора" class="avatar">
+                      <div class="post-info">
+                        <h3><?php echo $post['author']; ?></h3>
+                         <span class="post-date"><?php echo $post['date']; ?></span>
+                      </div>
+                   </div>
+                    <div class="post-content">
+                        <p><?php echo $post['text']; ?></p>
+                         <?php if (isset($post['image'])): ?>
+                          <img src="<?php echo $post['image']; ?>" alt="Изображение" class="post-image">
+                         <?php endif; ?>
+                    </div>
+                     <div class="post-footer">
+                       <div class="like-button">
+                           <img src="like.png" alt="Лайк" class="like-icon">
+                         <span><?php echo $post['likes']; ?></span>
+                       </div>
+                    </div>
+               </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
